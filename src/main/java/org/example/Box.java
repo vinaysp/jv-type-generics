@@ -13,7 +13,7 @@ public  class Box <T,V extends Number> implements BoxOperations<V>{
         return this.name;
     }
 
-    public   boolean hasSameName(Box<T, V> box) {
+    public  boolean hasSameName(Box<?, ?> box) {
         return this.name.equals(box.getName());
     }
 
@@ -41,4 +41,10 @@ public  class Box <T,V extends Number> implements BoxOperations<V>{
 
 
     }
+
+    public <U> Box<T,V>  castValue(U boxToCast){
+        return ((Box<T,V>) boxToCast);
+    }
+
+
 }
